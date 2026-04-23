@@ -1,0 +1,19 @@
+const numberToGuess = Math.floor(Math.random() * 10) + 1;
+
+let userGuess = 0;
+let attempts = 0;
+
+while (userGuess !== numberToGuess) {
+    let input = prompt("Guess a number between 1 and 10:");
+    userGuess = parseInt(input);
+    attempts++;
+    if (userGuess < numberToGuess) {
+        alert("The number is bigger! Try again.");
+    } else if (userGuess > numberToGuess) {
+        alert("The number is smaller! Try again.");
+    } else if (isNaN(userGuess)) {
+        alert("Please enter a valid number.");
+    }
+}
+alert("Congratulations! You found it in " + attempts + " attempts.");
+console.log("Final Score: " + attempts);
